@@ -6,34 +6,34 @@ package com.mtgo.exam.grpcinterface;
 message Empty {}
 
 message OrderRequest {
-  int64 orderId = 1;
+  int32 orderId = 1;
 }
 
 message UpdateOrderStatusRequest {
-  int64 orderId = 1;
+  int32 orderId = 1;
   string orderStatus = 2;
 }
 
 message OrderResponse {
-  int64 orderId = 1;
+  int32 orderId = 1;
   string orderStatus = 2;
   string orderNumber = 3;
   string restaurantId = 4;
-  repeated OrderLine orderLines = 5;
+  repeated OrderLineResponse orderLines = 5;
   string comment = 6;
-  CustomerInfo customerInfo = 11;
+  CustomerInfoResponse customerInfo = 11;
 }
 
-message OrderLine {
+message OrderLineResponse {
   string itemName = 1;
-  int64 quantity = 2;
+  int32 quantity = 2;
 }
 
-message CustomerInfo {
-  int64 userId = 1;
+message CustomerInfoResponse {
+  int32 userId = 1;
   string firstName = 2;
   string lastName = 3;
-  int64 phone = 4;
+  int32 phone = 4;
   string address = 5;
 }
 
